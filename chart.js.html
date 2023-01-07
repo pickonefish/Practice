@@ -1,0 +1,60 @@
+
+<div>
+    <canvas id="myChart"></canvas>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    const ctx = document.getElementById('myChart');
+
+    const labels = [1, 2, 3, 4, 5];
+    const data = {
+        labels: labels,
+        datasets: [
+            {
+                label: 'Dataset 1',
+                data: [10, 12, 1, 20, 3],
+                backgroundColor: 'red',
+            },
+            {
+                label: 'Dataset 2',
+                data: [10, 12, 1, 20, 3],
+                backgroundColor: 'blue',
+            },
+            {
+                label: 'Dataset 3',
+                data: [10, 12, 1, 20, 3],
+                backgroundColor: 'green',
+            },
+        ]
+    };
+
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Chart.js Bar Chart - Stacked'
+            },
+        },
+        responsive: true,
+        scales: {
+            x: {
+                stacked: true,
+            },
+            y: {
+                stacked: true
+            }
+        }
+        }
+    }; 
+
+
+    new Chart(ctx, config);
+  </script>
+
+
